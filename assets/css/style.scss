@@ -1,0 +1,678 @@
+$noir : #070C0C;
+$blanc : #E5E5E4;
+$vert : #05b72f;
+
+// .box{
+//   border: 1px solid $blanc;
+// }
+
+// >>>>>>>>>>>>>> MEDIA QUERY LANDSCAPE <<<<<<<<<<<<<<<<<<
+// @media (orientation: portrait) {
+//   body {
+//     -webkit-transform: rotate(-90deg);
+//     -moz-transform: rotate(-90deg);
+//     -o-transform: rotate(-90deg);
+//     -ms-transform: rotate(-90deg);
+//     transform: rotate(-90deg);
+//   }
+// }
+// C'est cool, mais c'est pas top!!
+
+// >>>>>>>>>>>>>> MEDIA QUERY TABLETTE <<<<<<<<<<<<<<
+@media (min-height: 650px) and (max-height: 900px){
+  body{
+    // INDEX
+    #header{
+      #topVid{
+        height: 125%;
+        overflow: hidden;
+        top: -8em;
+      }
+      #vimButton{
+        button{
+          font-size: 30px;
+        }
+      }
+    }
+    #showroom{
+      .next, .prev{
+        font-size: 7em;
+      }
+    }
+
+    // MEMBRE
+    #membre{
+      #membreId{
+        #membreDesc{
+          margin-top: 1em;
+          height: 100%;
+          #description{
+            height: 100%;
+          }
+        }
+      }
+      #membreContent{
+        #pictures{
+          height: 100%;
+          img{
+            padding: 0px 10px 20px 10px;
+            max-width: 15em;
+            height: auto;
+          }
+        }
+        #sound{
+          min-height: 50%;
+          *{
+            max-height: 50%;
+          }
+        }
+        #videos{
+          padding-bottom: 2em;
+        }
+      }
+    }
+
+    //ARTICLE
+    #post{
+
+    }
+  }
+}
+// >>>>>>>>>>>>>>> MEDIA QUERY DESKTOP <<<<<<<<<<<<<
+@media (min-width: 910px){
+  body{
+    // INDEX
+    #header{
+      #topVid{
+        top: -8em;
+      }
+      #vimButton{
+        button{
+          font-size: 50px;
+        }
+      }
+    }
+    #showroom{
+      .next, .prev{
+        font-size: 10em;
+      }
+    }
+
+    //MEMBRE
+    #membre{
+      #membreId{}
+      #membreContent{
+        #pictures{
+          height: 100%;
+          img{
+            padding: 0px 10px 20px 10px;
+            max-width: 15em;
+            height: auto;
+          }
+        }
+        #sound{
+          min-height: 100%;
+          *{
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    // ARTICLE
+    #post{
+
+    }
+  }
+}
+
+body{
+  background-color : $noir;
+  color : $blanc;
+  z-index: 0;
+  position: static;
+  section{
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color : $noir;
+    z-index: 10;
+  }
+  h3{
+    font-size: 2em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+  }
+  i{
+    color: $vert;
+  }
+  .row{
+    margin: 0px;
+  }
+  .container-fluid{
+    padding: 0px;
+  }
+  // EFFET LETTER SPACING
+  .toBig{
+    color: $blanc;
+    transition: all 280ms ease-in-out;
+  }
+  .toBig:hover{
+    color: $blanc;
+    letter-spacing: 0.2em;
+    transition: all 400ms ease-in-out;
+  }
+  .toBigMod{
+    color: $noir;
+    transition: all 280ms ease-in-out;
+  }
+  .toBigMod:hover{
+    color: $noir;
+    letter-spacing: 0.2em;
+    transition: all 400ms ease-in-out;
+  }
+  // EFFET BACKGROUND
+  .bgFirst{
+    background: url('../img/bgFirst.png') center fixed;
+  }
+  .bgOver{
+    background-color: transparent;
+    background: url('../img/bgOver.png') center repeat;
+  }
+  .filter{
+    background-color: rgba(7,12,12,0.8);
+  }
+  .filter1{
+    background: linear-gradient($noir, rgba(7,12,12,0.9));
+  }
+  .filter2{
+    background: linear-gradient(rgba(7,12,12,0.9), rgba(7,12,12,0.8));
+  }
+  .filter3{
+    background: linear-gradient(rgba(7,12,12,0.8),rgba(7,12,12,0.9));
+  }
+  .filter4{
+    background: linear-gradient(rgba(7,12,12,0.9), $noir);
+  }
+  // IMAGE BUBBLE
+  .bubble2{
+    width: 8em;
+    height: 8em;
+    border-radius: 100%;
+    padding: 20px;
+  }
+  .bubble{
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+    padding: 20px;
+    border: none;
+    transition: all 280ms ease-in-out;
+    transform: rotate(-360deg);
+  }
+  .bubble:hover{
+    transition: all 280ms ease-in-out;
+    transform: rotate(360deg);
+    border: 0.5em solid rgba(5, 183, 47, 0.5);
+    width: 11em;
+    height: 11em;
+  }
+  // EFFET OMBRAGE/ZOOM
+  .hover-shadow {
+  transition: 0.3s;
+  }
+  .hover-shadow:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  // EFFET BOUTONS "BACK"
+  .back{
+    color: $vert;
+    transition: all 280ms ease-in-out;
+    font-size: 1.2em;
+  }
+  .back:hover{
+    transition: all 280ms ease-in-out;
+    letter-spacing: 0.3em;
+    font-size: 0.8em;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: $vert;
+  }
+  hr{
+    background-color: $blanc;
+    color: $blanc;
+    margin: 0;
+  }
+}
+
+#header{
+  #topVid{
+    overflow: hidden;
+    z-index: -50;
+    display: block;
+    position: fixed;
+    height: 115%;
+    width: 100%;
+    top: -1em;
+  }
+  #vimButton{
+    position: relative;
+    top: 90%;
+    button{
+      transition: width 350ms ease-in-out;
+      background-color: rgba(0,0,0,0);
+      border: none;
+      outline: none;
+    }
+    button:hover{
+      cursor: pointer;
+      border: none;
+      opacity: 0.8;
+    }
+  }
+}
+
+#navigation{
+  z-index: 20;
+  background-color: rgba(7,12,12,0.955);
+  font-size: 1em;
+  width: 100%;
+  div, ul{
+    width: 100%;
+  }
+  button{
+    cursor: pointer;
+    height: 1.5em;
+    margin: 0;
+    border: 0;
+    background-color: rgba(0,0,0,0);
+    img{
+      height: 1.5em;
+      }
+    }
+  .btn-2:after,
+  .btn-2:before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+    color: $vert;
+  }
+  .btn-2:hover:after,
+  .btn-2:hover:before {
+    backface-visibility: hidden;
+    border-color: $vert;
+    color: $vert;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+  }
+  .btn-2:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+  }
+}
+
+#trans1, #trans3, #trans2{
+  transition: background-size 20ms linear;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+#trans1, #trans3{
+  background-size: 100%;
+}
+#trans2{
+  background-size: 125%;
+}
+
+#about{
+  z-index: 10;
+  height: auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  img{
+    padding-bottom: 1em;
+  }
+}
+
+#booked{
+  background-color: $noir;
+  max-width: 100%;
+  height: auto;
+}
+
+#presta{
+  padding-bottom: 2em;
+  height: auto;
+  width: 100%;
+  #slideSizer{
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  #da-slider, .da-slider{
+    h4{
+      font-size: 20px;
+    }
+  }
+}
+
+#insta{
+  height: auto;
+  width: 100%;
+  #instafeed{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+
+    a{
+      color: $blanc;
+    }
+    .feed{
+      max-height: 25em;
+      width: auto;
+      padding-left: 1em;
+    }
+    p{
+      padding-top: 1em;
+    }
+  }
+  #instafeed:before{
+    background: url('../img/bgOver.png')center fixed no-repeat;
+    background-size: cover;
+  }
+}
+
+#showroom{
+  background-color: $noir;
+  .buttons{
+    padding: 1em;
+  }
+  .prev, .next{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    // font-size: 4em;
+    height: 100%;
+    width: 100%;
+    outline: none;
+  }
+  button:hover{
+    cursor: pointer;
+    border: none;
+    opacity: 0.8;
+  }
+  .focus{
+    max-height: 90%;
+    width: auto;
+  }
+  .display{
+    height: 100%;
+    width: auto;
+  }
+  p{
+    height: 100%;
+  }
+}
+
+#contact{
+  padding-bottom: 3em;
+  #contact div.row{
+    // padding: 2em;
+  }
+  #contactForm{
+    background-color : $noir;
+    input, textarea{
+      margin : 1em 0px 1em 0px;
+    }
+  }
+  input[type=text], input[type=email]{
+    background-color : $noir;
+    color: $vert;
+    height: 2.5em;
+    border-radius: 1em;
+    transition: all 280ms ease-in-out;
+  }
+  textarea{
+    background-color : $noir;
+    color: $vert;
+  }
+  input[type=text]:focus, input[type=email]:focus, textarea:focus{
+    background-color: $blanc;
+    color: $noir;
+    font-weight: bold;
+    transition: all 280ms ease-in-out;
+  }
+  #submit{
+    height: 3em;
+    border: none;
+    background: $vert;
+    border-radius: 50px;
+    transition: all 280ms ease-in-out;
+  }
+  #submit:hover{
+    color: $blanc;
+    border: none;
+    box-shadow: 0 0 0 2px $blanc, 0 0 0 4px $vert;
+    background: darken($vert, 10);
+    transition: all 280ms ease-in-out;
+  }
+  #calendrier{
+    background-color : $noir;
+  }
+  #calendrier iframe{
+    width: 100%;
+    border-color: #05b72f;
+  }
+}
+
+#infos{
+  color: $noir;
+  img{
+    max-width: 50%;
+    right: 25%;
+  }
+}
+
+footer{
+  margin: 0;
+  height : 100px;
+  background-color : $noir;
+  p{
+    font-size: 0.8em;
+    width: 100%;
+    height: 100%;
+  }
+  i{
+    color: $blanc;
+  }
+}
+
+// >>>>>>>>>>>>>>> ARTICLES <<<<<<<<<<<<<<
+#post{
+  padding: 0;
+  .bg{
+    background: url('../img/Page_Perso_Assets_BG_V1.png')center repeat fixed;
+  }
+}
+
+#postHeader{
+  padding-bottom: 3em;
+  .container{
+    max-width: 90%;
+    img{
+      padding-top: 3em;
+      padding-bottom: 3em;
+      max-height: 800px;
+      min-height: 500px;
+
+    }
+  }
+}
+#postText{
+  #postSubText{
+    border-radius: 5%;
+    padding: 0;
+    background: url('../img/Page_Perso_Assets_BG_V2.png')center repeat fixed;
+    #postTitle{
+      h2{
+        font-size: 3em;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+      }
+      p{
+        margin-bottom:0;
+      }
+    }
+    #postContent{
+      padding-top: 3em;
+      padding-bottom: 2em;
+    }
+  }
+}
+
+#postPics{
+  *{
+    border-radius: 5%;
+  }
+  max-width: 80%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: rgba(7, 12, 12, 0.6);
+  .filter{
+    padding-top: 2em;
+    div{
+      padding-bottom: 2em;
+    }
+  }
+  img{
+    max-height: 300px;
+    width: auto;
+    cursor: pointer;
+  }
+  p{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#postModal, .modal-content, .modal-dialog, .modal-body{
+  min-width: 80%;
+  height: auto;
+  // #modalFocus{
+  //   height: auto;
+  //   width: 100%;
+  // }
+}
+
+// >>>>>>>>>>>>>>> MEMBRES <<<<<<<<<<<<<<<<<
+
+#membreBg{
+  border-radius: 5%;
+  padding: 0;
+  max-width: 90%;
+  background: url('../img/Page_Perso_Assets_BG_V2.png') center fixed;
+}
+
+#membreId{
+  height: 100%;
+  padding-bottom: 1em;
+  #membrePic{
+    max-height: 100%;
+    width: auto;
+    padding : 20px 0px 0px 0px;
+  }
+  #membreDetails{
+    max-height: 100%;
+    padding : 20px 0px 0px 20px;
+    #membreNom{
+      // padding: 20px 0px 0px 0px;
+      img{
+        max-height: 5em;
+      }
+    }
+    #membreSerial{
+      padding-bottom: 0.5em;
+      img{
+      height: 1em;
+      }
+    }
+    #membreLink{
+      height: 5%;
+    }
+  }
+  #membreDesc{
+    height: 100%;
+    #description{
+      margin-top: 2em;
+      height: 100%;
+    }
+  }
+}
+
+#membreContent{
+  height: 100%;
+  padding: 0.5em;
+  #pictures{
+    height: 100%;
+    img{
+      padding: 0px 10px 20px 10px;
+      max-width: 12em;
+      height: auto;
+    }
+  }
+  #picModal{
+    width: auto;
+    height: 100%;
+    #picFocus{
+      width: auto;
+      height: 100%;
+    }
+  }
+  #sound{
+    padding-bottom: 2em;
+  }
+  #videos{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    .vidContent{
+      min-height: 300px;
+      iframe{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+// >>>>>>>>>>>>>>>> ADMIN SHOWROOM <<<<<<<<<<<<<
+#adminLogo, #adminAudreact, #adminBumpers, #adminVJing{
+  padding-top: 1em;
+  padding-bottom: 2em;
+  height: 100%;
+  form{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+  }
+  .content{
+    max-width: 50%;
+    img{
+      max-height: 100px;
+      width: auto;
+      padding-bottom: 5px;
+    }
+  }
+  iframe{
+    height: auto;
+  }
+}

@@ -1,0 +1,459 @@
+<header id="header" class="container-fluid text-center">
+  <!-- VIDEO PRESENTATION -->
+  {{#each visuels}}
+  <iframe id="topVid" src="https://player.vimeo.com/video/{{this.video}}?muted=1&loop=1&autoplay=1" frameborder="0">
+  </iframe>
+  <div id="vimButton" class="row">
+    <div id="pause" class="col-6 text-left">
+      <button id="vimPlay" type="button" style="display: none"><i class="fas fa-play fa-lg"></i></button>
+      <button id="vimPause" type="button"><i class="fas fa-pause fa-lg"></i></button>
+    </div>
+    <div id="mute" class="col-6 text-right">
+      <button id="vimMute" type="button" style="display: none"><i class="fas fa-volume-off fa-lg"></i></button>
+      <button id="vimUnmute" type="button"><i class="fas fa-volume-up fa-lg"></i></button>
+    </div>
+  </div>
+  {{/each}}
+</header>
+
+<nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <span class="nav-item">
+      <button id="eng" type="button" class="fr"><img class="img-fluid" src="img/uk.gif"/></button>
+      <button id="fr" type="button" class="eng d-none "><img class="img-fluid" src="img/fr2.gif"/></button>
+    </span>
+
+    <ul class="navbar-nav d-flex justify-content-around">
+      <li class="nav-item btn-2 ">
+        <a class="nav-link " href="#header"><span class="fr">Accueil</span><span class="eng d-none">Home</span></a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="#about"><span class="fr">Qui nous sommes</span><span class="eng d-none">Who we are</span></a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="#presta"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="#team"><span class="fr">L'équipe</span><span class="eng d-none">The Team</span></a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{{#each visuels}}
+  <section id="trans1" class="img-transition box" style="background-image: url('../img/{{this.transition1}}');">
+  </section>
+{{/each}}
+
+<section id="about" class="box">
+  <div class="container text-center">
+    <img class="img-fluid" src="img/visualdnb.png"/>
+    <h4 class="">
+      <span class="fr">Nous sommes un collectif d’artistes/techniciens audiovisuels.</span>
+      <span class="eng d-none">We are a collective of audiovisual artists/technicians.</span>
+    </h4>
+    <p class="toBig">
+      <span class="fr">Nous créons des identités graphiques pour les producteurs et labels de musique électronique et réalisons des performances live.</span>
+      <span class="eng d-none">We create graphic identities for producers and labels of electronic music and perform live performances.</span>
+    </p>
+    <p class="toBig">
+      <span class="fr">Logos, Bumpers, Clips d animation, Pages web, scénographies, Clips vjing, Mapping, live performance,  show lumière, scène couverte  et système de sonorisation.</span>
+      <span class="eng d-none">Logos, Bumpers, Animation Clips, Web Pages, Scenographies, vjing Clips, Mapping, live performance, light show, indoor stage and sound system.</span>
+    </p>
+    <h5 class="toBig">
+      <span class="fr">Tout est imaginable pour vos besoin visuel!</span>
+      <span class="eng d-none">Everything is imaginable for your visual needs!</span>
+    </h5>
+  </div>
+</section>
+
+<section id="booked" class="text-center box">
+  <h3 class="toBig"><span class="fr">Programmés avec</span><span class="eng d-none">Booked with</span></h3>
+    <div id="bookedLogos" class="container">
+    {{#each progs}}
+      <img class="img-fluid bubble2" src="../img/{{this.url}}" title="{{this.nom}}"/>
+    {{/each}}
+    </div>
+</section>
+
+{{#each visuels}}
+  <section id="trans2" class="img-transition box" style="background-image: url('../img/{{this.transition2}}');">
+  </section>
+{{/each}}
+
+<section id="presta" class="container-fluid text-center box">
+  <h3 class="toBig"><span class="fr">Nos Prestations</span><span class="eng d-none">Our Performances</span></h3>
+  <div id="slideSizer">
+    <div id="da-slider" class="da-slider">
+      {{#each articles}}
+        <div class="da-slide row">
+          <div class="col-12 col-md-6">
+            <h4 class="toBig">{{this.titre}}</h4>
+            <p>{{{this.date}}}</p>
+            {{{this.description}}}
+            <button type="button" class="btn btn-success da-link" onclick="window.location.href='/article/{{this._id}}'">
+              <!-- <a href="article/" class="da-link"> -->
+                <span class="fr">Plus d'infos...</span>
+                <span class="eng d-none">Read more...</span>
+              <!-- </a> -->
+            </button>
+          </div>
+          <div class="da-img col-12 col-md-6">
+            <img class="img-fluid" src="../img/{{this.url}}" alt="image01" />
+          </div>
+        </div>
+      {{/each}}
+
+      <nav class="da-arrows">
+        <span class="da-arrows-prev"><i class="fas fa-caret-square-left fa-3x"></i></span>
+        <span class="da-arrows-next"><i class="fas fa-caret-square-right fa-3x"></i></span>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section id="insta" class="box container-fluid text-center">
+  <div class="bgFirst">
+    <div class="bgOver">
+      <div class="filter">
+        <h3 class="toBig">Instagram</h3>
+        <div id="instafeed" class="container"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="text-center box container-fluid">
+    <h3 class="toBig"><span class="fr">Nos Compétences</span><span class="eng d-none">Our Skills</span></h3>
+  <div class="row">
+    <div class=" col-6 col-lg-3">
+      <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+      <h5><span class="fr">Compétence 1</span><span class="eng d-none">Skill 1</span></h5>
+      <p class="offset-1 col-10 toBig">
+        <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      </p>
+    </div>
+    <div class=" col-6 col-lg-3">
+      <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+      <h5><span class="fr">Compétence 2</span><span class="eng d-none">Skill 2</span></h5>
+      <p class="offset-1 col-10 toBig">
+        <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      </p>
+    </div>
+    <div class=" col-6 col-lg-3">
+      <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+      <h5><span class="fr">Compétence 3</span><span class="eng d-none">Skill 3</span></h5>
+      <p class="offset-1 col-10 toBig">
+        <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      </p>
+    </div>
+    <div class=" col-6 col-lg-3">
+      <img class="img-fluid bubble" src="https://visualdnb.files.wordpress.com/2017/12/trampa-03.jpg"/>
+      <h5><span class="fr">Compétence 4</span><span class="eng d-none">Skill 4</span></h5>
+      <p class="offset-1 col-10 toBig">
+        <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      </p>
+    </div>
+
+</section>
+
+{{#each visuels}}
+<section id="trans3" class="img-transition box" style="background-image: url('../img/{{this.transition3}}');">
+</section>
+{{/each}}
+
+<section id="team" class="container-fluid text-center box">
+  <h3 class="toBig"><span class="fr">Membres de l'équipe</span><span class="eng d-none">Team members</span></h3><br>
+  <div class="container">
+    <div class="row">
+        {{#each membres}}
+        <div class="col-4 col-md-3">
+            <a href="/membres/{{this._id}}">
+              <img class="urlNom bubble" src="../img/{{this.urlPicture}}" alt="">
+            </a>
+          <img class="urlSerial img-fluid" src="../img/{{this.urlSerial}}" alt=""><br>
+        </div>
+        {{/each}}
+    </div>
+  </div>
+</section>
+
+<section id="showroom" class="container-fluid text-center box">
+  <div class="bgFirst">
+    <div class="bgOver">
+      <div id="showLogo" class="filter1">
+          <!-- DERNIERS LOGOS -->
+          <div class="row gldBox showFirst align-items-center box">
+            <h3 class="col-12 text-center toBig"><span class="fr">Nos Logos</span><span class="eng d-none">Our Logos</span></h3>
+              <div id="firstLogos" class="container">
+                {{#each logos}}
+                  <img class="img-fluid showLogo hover-shadow" src="../img/{{this.url}}" alt="Firehouse" data-toggle="collapse" data-target="#focusLogo" aria-controls="focusLogo" aria-expanded="false"/>
+                {{/each}}
+              </div>
+          </div>
+          <!-- click sur logo => FOCUS -->
+          <div id="focusLogo" class="row gldBox collapse box">
+            <div class="col-8 gldBox container focus">
+                <!-- FOCUS VIDEO -->
+                <img class="img-fluid display" src=""/>
+            </div>
+            <div class="col-4 box">
+              <div class="container box d-flex align-items-center" style="height: 50%;">
+                <span class="text-center">
+                  <button id="reduceLogo" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+                </span>
+                <p class="d-flex align-items-center toBig">
+                  <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                  <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                </p>  <!-- texte descriptif -->
+              </div>
+              <div class="row align-items-center box buttons" style="height: 50%;">
+                <div class="col-6 buttons">
+                  <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+                </div>
+                <div class="col-6 buttons">
+                  <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div id="showAud" class="filter2">
+          <!-- DERNIERS CLIPS -->
+          <div class="row gldBox showFirst align-items-center box">
+            <h3 class="col-12 text-center toBig"><span class="fr">Nos clips Audio React</span><span class="eng d-none">Our Audio React clips</span></h3>
+              <div id="firstAud" class="container">
+                {{#each audreacts}}
+                  <a class="showAud" target="#fnlFocusAud" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusAud" aria-controls="focusAud" aria-expanded="false">
+                    <img class="img-fluid hover-shadow" src="../img/{{this.image}}"/>
+                  </a>
+                {{/each}}
+              </div>
+          </div>
+          <div id="focusAud" class="row gldBox collapse box">
+            <div class="col-8 gldBox container focus">
+                <!-- FOCUS VIDEO -->
+                <iframe id="fnlFocusAud" class="display" src="" style="width: 100%;"></iframe>
+            </div>
+            <div class="col-4 box">
+              <div class="container box" style="height: 50%;">
+                <span class="text-center">
+                  <button id="reduceAud" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+                </span>
+                <p class="d-flex align-items-center toBig">
+                  <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                  <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                </p>
+                  <!-- texte descriptif -->
+              </div>
+              <div class="row align-items-center box buttons" style="height: 50%;">
+                <div class="col-6 buttons">
+                  <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+                </div>
+                <div class="col-6 buttons">
+                  <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div id="showBumper" class="filter3">
+          <!-- DERNIERS CLIPS -->
+        <div class="row gldBox showFirst align-items-center box">
+          <h3 class="col-12 text-center toBig"><span class="fr">Nos Bumpers</span><span class="eng d-none">Our Bumpers</span></h3>
+            <div id="firstBumper" class="container">
+              {{#each bumpers}}
+                <a class="showBumper" target="#fnlFocusBumper" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusBumper" aria-controls="focusBumper" aria-expanded="false">
+                  <img class="img-fluid hover-shadow" src="../img/{{this.image}}"/>
+                </a>
+              {{/each}}
+            </div>
+        </div>
+        <!-- click sur image => FOCUS -->
+        <div id="focusBumper" class="row gldBox collapse box">
+          <div class="col-8 gldBox container focus">
+              <!-- FOCUS VIDEO -->
+              <iframe id="fnlFocusBumper" class="display" src="" style="width: 100%;"></iframe>
+          </div>
+          <div class="col-4 box">
+            <div class="container box" style="height: 50%;">
+              <span class="text-center">
+                <button id="reduceBumper" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+              </span>
+              <p class="d-flex align-items-center toBig">
+                <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+              </p>
+                <!-- texte descriptif -->
+            </div>
+            <div class="row align-items-center box buttons" style="height: 50%;">
+              <div class="col-6 buttons">
+                <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+              </div>
+              <div class="col-6 buttons">
+                <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="showVJ" class="filter4">
+        <!-- DERNIERS CLIPS -->
+        <div class="row gldBox showFirst align-items-center box">
+          <h3 class="col-12 text-center toBig"><span class="fr">Nos clip VJing</span><span class="eng d-none">Our VJing clips</span></h3>
+            <div id="firstVJ" class="container">
+              {{#each vjings}}
+                <a class="showVJ" target="#fnlFocusVJ" href="https://player.vimeo.com/video/{{this.video}}" frameborder="0" data-toggle="collapse" data-target="#focusVJ" aria-controls="focusVJ" aria-expanded="false">
+                  <img class="img-fluid hover-shadow" src="../img/{{this.image}}"/>
+                </a>
+              {{/each}}
+            </div>
+        </div>
+        <!-- click sur image => FOCUS -->
+        <div id="focusVJ" class="row gldBox collapse box">
+          <div class="col-8 gldBox container focus">
+              <!-- FOCUS VIDEO -->
+              <iframe id="fnlFocusVJ" class="display" src="" style="width: 100%;"></iframe>
+          </div>
+
+          <div class="col-4 box">
+            <div class="container box" style="height: 50%;">
+              <span class="text-center">
+                <button id="reduceVJ" type="button" class="btn btn-success"><span class="fr">Reduire</span><span class="eng d-none">Reduce</span></button>
+              </span>
+              <p class="d-flex align-items-center toBig">
+                <span class="fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                <span class="eng d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+              </p>
+                  <!-- texte descriptif -->
+            </div>
+            <div class="row align-items-center box buttons" style="height: 50%;">
+              <div class="col-6 buttons">
+                <button type="button" class="prev"><i class="fas fa-caret-square-left"></i></button>
+              </div>
+              <div class="col-6 buttons">
+                <button type="button" class="next"><i class="fas fa-caret-square-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container-fluid box text-center">
+  <h3 class="toBig"><span class="fr">Contactez nous!!</span><span class="eng d-none">Contact us!!</span></h3>
+  <div class="container">
+    <div class="row">
+    <!-- CONTACT + CALENDRIER -->
+      <form id="contactForm" action="/" class="col-12 col-md-6 box" method="POST">
+        <input type="text" class="col-12" name="nom" placeholder="Nom" required>
+        <input type="email" class="col-12" name="email" placeholder="Email" required>
+        <p class="toBig"><span class="fr">Vous êtes intéressé par :</span><span class="eng d-none">You are interested by :</span></p>
+        <input type="button" class="inputButton btn btn-outline-success" value="Logo" name="logo">
+        <input type="button" class="inputButton btn btn-outline-success" value="ClipAudioReact" name="clipAudioReact">
+        <input type="button" class="inputButton btn btn-outline-success" value="Bumper" name="bumper">
+        <input type="button" class="inputButton btn btn-outline-success" value="ClipVJ" name="clipVJ">
+        <input type="button" class="inputButton btn btn-outline-success" value="ClipVideo" name="clipVideo">
+        <input id="sceno" type="button" class="inputButton btn btn-outline-success" value="Scenographie" name="scenographie" data-toggle="modal" data-target="#infos">
+        <input type="button" class="inputButton btn btn-outline-success" value="Autre" name="autre">
+        <input type="text" class="col-12" id="subject" name="subject" placeholder="Sujet" required>
+        <textarea maxlength="1000" type="text" class="col-12" name="message" placeholder="Message" style="border-radius:1em;
+        " required></textarea>
+        <input type="submit" id="submit" class="col-12" value="Envoyer">
+      </form>
+      <!-- >>>>>>>>> MODAL INFO<<<<<<<<< -->
+      <section id="infos" class="modal fade text-center" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title w-100 toBigMod" id="modalLabel"><span class="fr">Informations complementaires</span><span class="eng d-none">Further informations</span></h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <p class="fr">Afin de repondre au mieux à vos attentes en ce qui concerne nos prestations de scénographie, nous avons besoin de renseignements complementaires pour pouvoir établir un devis précis : </p>
+              <p class="eng d-none">In order to best meet your expectations regarding our scenography services, we need additional information to establish an accurate quote : </p>
+
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <h5 class="toBigMod"><span class="fr">Côté organisation</span><span class="eng d-none">On the organisation side</span></h5>
+                  <ul>
+                    <li><span class="fr">Nom de la soirée</span><span class="eng d-none">Name of the party</span></li>
+                    <li><span class="fr">Date et horaires de la soirée</span><span class="eng d-none">Party's date and time</span></li>
+                    <li><span class="fr">Lieu de la soirée</span><span class="eng d-none">Place of the party</span></li>
+                    <li><span class="fr">Nom de la salle</span><span class="eng d-none">Venue's name</span></li>
+                    <li><span class="fr">Capacité d'accueil de la salle</span><span class="eng d-none">Capacity of the room</span></li>
+                    <li><span class="fr">Prix d'entrée</span><span class="eng d-none">Entry price</span></li>
+                    <li><span class="fr">Nom des artistes</span><span class="eng d-none">Artists names</span></li>
+                  </ul>
+              </div>
+
+              <div class="col-sm-12 col-md-6">
+                <h5 class="toBigMod"><span class="fr">Côté technique</span><span class="eng d-none">On the technical side</span></h5>
+                <ul>
+                  <li><span class="fr">Fiche technique de la salle</span><span class="eng d-none">Venue's technical sheet</span></li>
+                  <li><span class="fr">Nombre de praticables sur scene</span><span class="eng d-none">Number of practicables on stage</span></li>
+                  <li><span class="fr">Heure d'arrivée possible pour l'installation</span><span class="eng d-none">Possible arrival time for installation</span></li>
+                  <li><span class="fr">Durée d'installation possible</span><span class="eng d-none">Possible installation time</span></li>
+                  <li><span class="fr">Dossier de presse des artistes (logo, typographie, photos...)</span><span class="eng d-none">Artist's press pack (logos, typography, photos...)</span></li>
+                  <li><span class="fr">Affiche de la soirée au format ".psd" (Photoshop)</span><span class="eng d-none">Party's poster in ".psd" format (Photoshop)</span></li>
+                </ul>
+              </div>
+              <div class="col-12">
+                <p class="fr">Merci de revenir vers nous avec tous ces éléments en votre possession.</p>
+                <p class="eng d-none">Thank you for coming back to us with all these elements in your possession.</p>
+              </div>
+            </div>
+          </div>
+
+            <div class="modal-footer w-100 row text-center">
+              <img class="img-fluid col-12" src="../img/visualdnb.png"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div id="calendrier" class="col-12 col-md-6 box d-flex text-center">
+        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;hl=fr&amp;bgcolor=%23ffffff&amp;src=chris.ratsimba87%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FParis" style="border-width:0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<footer class="box text-center container-fluid d-flex h-100">
+  <div class="container" style="padding-top: 3em; padding-bottom: 3em;">
+    <div class="w-100 row ">
+      <div class="col-6 w-100 d-flex justify-content-around align-items-center">
+        <a target="_blank" href="https://www.facebook.com/DNBVisual/"><i class="fab fa-facebook-square fa-5x"></i></a>
+        <a target="_blank" href="https://www.instagram.com/visualdnb/"><i class="fab fa-instagram fa-5x"></i></a>
+        <a target="_blank" href="https://vimeo.com/user85777322"><i class="fab fa-vimeo fa-5x"></i></a>
+      </div>
+      <div class="col-6 h-100 d-flex align-items-center">
+        <p class="toBig">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</footer>

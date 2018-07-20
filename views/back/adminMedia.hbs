@@ -1,0 +1,49 @@
+<nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-around">
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/visuel">Visuel</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/prog">Programmé avec</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/article">Article</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/showroom">Showroom</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link active" href="/admin/media">Media</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/membres">Membres</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="col-12 text-center">
+  <form action="/admin/media" method="POST" enctype="multipart/form-data">
+    <input type="file" name="filename" required><br><br>
+    <input type="submit" class="btn btn-success" value="Upload">
+  </form>
+</section>
+
+<section id="" class="container text-center">
+  <div id="" class="row">
+    {{#each medias}}
+    <div class="content col-sm-6 col-md-4 col-lg-2">
+      <img class="img-fluid bubble2" src="../img/{{this.filename}}" title="{{this.filename}}"/><br>
+      <p class="text-truncate">{{this.filename}}</p>
+      <a href="/admin/delete-media/{{this.filename}}/{{this._id}}">Supprimer</a>
+    </div>
+    {{/each}}
+  </div>
+</section>

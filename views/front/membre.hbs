@@ -1,0 +1,120 @@
+<section id="membre" class="container-fluid">
+  <p class="w-100 text-center">
+    <a class="back" href="/#team">Retour vers la page principale</a>
+  </p>
+
+  <div id="membreBg" class="container">
+    <div class="filter">
+      <div class="row align-items-center">
+        <div id="membreId" class="container col-12 col-md-6">
+          <div class="row align-items-center">
+                <div id="membrePic" class="col-6 text-center">
+                    <img class="img-fluid" src="../img/{{membres.urlPicture}}"/>
+                </div>
+
+                <div id="membreDetails" class="col-6 text-left">
+                  <div id="membreNom">
+                      <img class="img-fluid" src="../img/{{membres.urlNom}}"/>
+                  </div>
+
+                  <div id="membreSerial" class="">
+                      <img class="img-fluid" src="../img/{{membres.urlSerial}}"/>
+                  </div>
+
+                  <div id="membreSkills">
+                    <p>Skills : {{membres.skills}}</p>
+                  </div>
+
+                  <div id="membreLink">
+                    <a href="mailto:{{membres.contact}}">{{membres.contact}}</a><br>
+                    <a target="_blank" href="{{membres.site}}">{{membres.site}}</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="membreDesc" class="col-12 col-md-6 d-flex align-items-center">
+          <div class="container text-center">
+            <hr>
+            <p id="description">
+              {{{membres.description}}}
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <hr style="margin-top: 1em;margin-bottom: 1em;">
+
+      <div id="membreContent" class="row">
+        <div id="pictures" class="col-12 col-md-8 row flex-wrap justify-content-around">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url1}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url2}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url3}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url4}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url5}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url6}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url7}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url8}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url9}}" alt="" data-toggle="modal" data-target="#picModal">
+          <img class="img-fluid hover-shadow" src="../img/{{membres.urlPhoto.url10}}" alt="" data-toggle="modal" data-target="#picModal">
+        </div>
+
+        <div id="sound" class="d-none col-4 d-md-flex">{{{membres.urlSound}}}</div>
+
+        <hr class="offset-1 col-10">
+
+        <div id="videos" class="col-12 row">
+                <div class="col-12 col-md-6 col-lg-4 vidContent">
+                    <iframe src="https://player.vimeo.com/video/{{membres.urlVideo.url1}}" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 vidContent">
+                    <iframe src="https://player.vimeo.com/video/{{membres.urlVideo.url2}}" frameborder="0">
+                    </iframe>
+                </div>
+                <div class="col-12 col-lg-4 vidContent">
+                    <iframe src="https://player.vimeo.com/video/{{membres.urlVideo.url3}}" frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="picModal" class="modal fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="modal-body">
+        <img id="picFocus" src="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="w-100 text-center" style="margin-top: 1em;margin-bottom: 1em;">
+  <a class="back" href="/#team">Retour vers la page principale</a>
+</p>
+
+<hr>
+
+<footer class="box text-center container-fluid d-flex h-100">
+  <div class="container" style="padding-top: 3em; padding-bottom: 3em;">
+    <div class="w-100 row ">
+      <div class="col-6 w-100 d-flex justify-content-around align-items-center">
+        <a target="_blank" href="https://www.facebook.com/DNBVisual/"><i class="fab fa-facebook-square fa-5x"></i></a>
+        <a target="_blank" href="https://www.instagram.com/visualdnb/"><i class="fab fa-instagram fa-5x"></i></a>
+        <a target="_blank" href="https://vimeo.com/user85777322"><i class="fab fa-vimeo fa-5x"></i></a>
+      </div>
+      <div class="col-6 h-100 d-flex align-items-center">
+        <p class="toBig">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</footer>

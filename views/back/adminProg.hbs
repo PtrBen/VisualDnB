@@ -1,0 +1,55 @@
+<nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-around">
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/visuel">Visuel</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link active" href="/admin/prog">Programmé avec</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/article">Article</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/showroom">Showroom</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/media">Media</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/membres">Membres</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <form action="/admin/prog" method="POST">
+
+    <div class="row text-center">
+        <div class="col-6" style="margin-top: 80px;">
+            <p>{{description}}</p>
+            <input type="text" name="url" placeholder="image url" value=""><br><br>
+            <input type="text" name="nom" placeholder="nom" value=""><br><br>
+            <input class="btn btn-success" type="submit" value="Envoyer">
+        </div>
+        <div class="col-6">
+            <section id="">
+              <div id="" class="container">
+                {{#each progs}}
+                  <img class="img-fluid bubble2" src="../img/{{this.url}}" title="{{this.nom}}"/>
+                  <a href="/admin/delete-prog/{{this._id}}">Supprimer</a>
+                {{/each}}
+              </div>
+            </section>
+        </div>
+      </div>
+
+    </form>
+</section>

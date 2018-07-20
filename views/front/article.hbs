@@ -1,0 +1,98 @@
+<section id="post" class="text-center">
+  <p>
+    <a class="back" href="/#presta">Retour vers la page principale</a>
+  </p>
+
+  <section id="postHeader" class="container-fluid ">
+    <div class="container bg" style="border-radius: 10px;">
+      <img class="img-fluid" src="../img/{{article.url}}" alt="" />
+    </div>
+  </section>
+
+  <section id="postText" class="container-fluid">
+    <div id="postSubText" class="container">
+      <div id="postTitle" class="text-center filter">
+        <h2 class="toBig">{{article.titre}}</h2>
+        <p>{{article.date}}</p>
+      </div>
+
+      <div id="postContent" class="container filter">
+          <div class="">
+            {{{article.description}}}
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="postPics" class="text-center container-fluid">
+    <div class="bg">
+      <div class="row filter">
+        <div class="col-12">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url1}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-6">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url2}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-6">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url3}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-12">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url4}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-6">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url5}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-6">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url6}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-12">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url7}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-6">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url8}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-6">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url9}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <div class="col-12">
+          <img class="hover-shadow img-fluid" src="../img/{{article.photos.url10}}" alt="" data-toggle="modal" data-target="#postModal">
+        </div>
+        <p>
+          <a class="back" href="/#presta">Retour vers la page principale</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</section>
+
+  <!-- >>>>>>>>> MODAL <<<<<<<<< -->
+<section id="postModal" class="modal fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="modal-body">
+        <img id="modalFocus" src="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<footer class="box text-center container-fluid d-flex h-100">
+  <div class="container" style="padding-top: 3em; padding-bottom: 3em;">
+    <div class="w-100 row ">
+      <div class="col-6 w-100 d-flex justify-content-around align-items-center">
+        <a target="_blank" href="https://www.facebook.com/DNBVisual/"><i class="fab fa-facebook-square fa-5x"></i></a>
+        <a target="_blank" href="https://www.instagram.com/visualdnb/"><i class="fab fa-instagram fa-5x"></i></a>
+        <a target="_blank" href="https://vimeo.com/user85777322"><i class="fab fa-vimeo fa-5x"></i></a>
+      </div>
+      <div class="col-6 h-100 d-flex align-items-center">
+        <p class="toBig">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</footer>

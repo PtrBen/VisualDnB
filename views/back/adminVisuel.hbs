@@ -1,0 +1,70 @@
+<nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-around">
+      <li class="nav-item active btn-2">
+        <a class="nav-link" href="/admin/visuel">Visuel</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/prog">Programmé avec</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/article">Article</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/showroom">Showroom</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/media">Media</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/membres">Membres</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<form action="/admin/visuel" method="POST">
+  <section id="visuel" class="row text-center">
+    <div class="col-6">
+      {{#each visuels}}
+      <input value="{{this.video}}" class="offset-2 col-8" type="text" name="video" placeholder="Video" style="margin-top: 180px;">
+      <p class="">Merci de copier <bold>uniquement</bold> l'ID de la video </p>
+      <p class="">Exemple : https://vimeo.com/273082427 -> entrez simplement "273082427" dans le champs</p>
+    </div>
+    <div class="col-6 ">
+      <iframe src="https://player.vimeo.com/video/{{this.video}}?autoplay=1&loop=1&muted=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+    <div class="col-6">
+      <input value="{{this.transition1}}" class="offset-2 col-8" type="text" name="transition1" placeholder="Transition n°1" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+    <img src="../img/{{this.transition1}}" alt="" style="height: 400px;">
+    </div>
+
+    <div class="col-6">
+      <input value="{{this.transition2}}" class="offset-2 col-8" type="text" name="transition2" placeholder="Transition n°2" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+    <img src="../img/{{this.transition2}}" alt="" style="height: 400px;">
+    </div>
+
+    <div class="col-6">
+      <input value="{{this.transition3}}" class="offset-2 col-8" type="text" name="transition3" placeholder="Transition n°3" style="margin-top: 180px;">
+    </div>
+    <div class="col-6">
+    <img src="../img/{{this.transition3}}" alt="" style="height: 400px;">
+    {{/each}}
+    </div>
+    <div class="offset-5">
+      <input class="btn btn-success" type="submit" name="" id="" value="Envoyer">
+    </div>
+  </section>
+  <b>{{description}}</b>
+</form>

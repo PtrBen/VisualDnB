@@ -1,0 +1,101 @@
+<nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-around">
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/visuel">Visuel</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/prog">Programmé avec</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/article">Article<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/showroom">Showroom</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/media">Media</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link active" href="/admin/membres">Membres</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="row">
+  <div class="col-12 col-md-6 text-center">
+    <form action="/admin/edit-membre/{{membre._id}}" method="POST">
+       <input type="text" name="urlPicture" placeholder="Picture" value="{{membre.urlPicture}}"><br><br>
+        <input type="text" name="urlNom" placeholder="Nom image" value="{{membre.urlNom}}"><br><br>
+        <input type="text" name="nom" placeholder="Nom texte" value="{{membre.nom}}"><br><br>
+        <input type="text" name="urlSerial" placeholder="Visual Serial" value="{{membre.urlSerial}}"><br><br>
+        <input type="text" name="skills" placeholder="Technical skills" value="{{membre.skills}}"><br><br>
+        <input type="email" name="contact" placeholder="Contact" value="{{membre.contact}}"><br><br>
+        <input type="text" name="site" placeholder="Web Site" value="{{membre.site}}"><br><br>
+        <textarea name="description" id="description" class="ckeditor" cols="80" rows="10">{{membre.description}}</textarea><br>
+        <!-- SOUNDCLOUD -->
+        <input type="text" name="urlSound" placeholder="Soundcloud" value="{{membre.urlSound}}"><br><br>
+        <!-- PHOTOS -->
+        <input type="text" name="purl1" placeholder="image url1" value="{{membre.urlPhoto.url1}}"><br><br>
+        <input type="text" name="purl2" placeholder="image url2" value="{{membre.urlPhoto.url2}}"><br><br>
+        <input type="text" name="purl3" placeholder="image url3" value="{{membre.urlPhoto.url3}}"><br><br>
+        <input type="text" name="purl4" placeholder="image url4" value="{{membre.urlPhoto.url4}}"><br><br>
+        <input type="text" name="purl5" placeholder="image url5" value="{{membre.urlPhoto.url5}}"><br><br>
+        <input type="text" name="purl6" placeholder="image url6" value="{{membre.urlPhoto.url6}}"><br><br>
+        <input type="text" name="purl7" placeholder="image url7" value="{{membre.urlPhoto.url7}}"><br><br>
+        <input type="text" name="purl8" placeholder="image url8" value="{{membre.urlPhoto.url8}}"><br><br>
+        <input type="text" name="purl9" placeholder="image url9" value="{{membre.urlPhoto.url9}}"><br><br>
+        <input type="text" name="purl10" placeholder="image url10" value="{{membre.urlPhoto.url10}}"><br><br>
+        <!-- VIDEOS -->
+        <input type="text" name="vurl1" placeholder="video url1" value="{{membre.urlVideo.url1}}"><br><br>
+        <input type="text" name="vurl2" placeholder="video url2" value="{{membre.urlVideo.url2}}"><br><br>
+        <input type="text" name="vurl3" placeholder="video url3" value="{{membre.urlVideo.url3}}"><br><br>
+
+        <input type="submit" class="btn btn-success" value="Envoyer">
+    </form>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="text-center">
+      <b>Picture : </b> <img src="../../img/{{membre.urlPicture}}" alt="" style="height: 200px;"><br><br>
+      <b>Nom : </b> <b>{{membre.nom}}</b><br>
+        <img class="img-fluid" src="../../img/{{membre.urlNom}}">
+      <br>
+      <b>Skills : </b> <b>{{membre.skill}}</b><br><br>
+      <b>Contact : </b> <b>{{membre.contact}}</b><br><br>
+      <b>Site : </b> <b>{{membre.site}}</b><br><br>
+    </div>
+    <b>Description : </b> <b>{{{membre.description}}}</b><br><br>
+    <div class="text-center">
+      <div>
+        <b>URL photo 1 : </b> <img src="../../img/{{membre.urlPhoto.url1}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 2 : </b> <img src="../../img/{{membre.urlPhoto.url2}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 3 : </b> <img src="../../img/{{membre.urlPhoto.url3}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 4 : </b> <img src="../../img/{{membre.urlPhoto.url4}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 5 : </b> <img src="../../img/{{membre.urlPhoto.url5}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 6 : </b> <img src="../../img/{{membre.urlPhoto.url6}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 7 : </b> <img src="../../img/{{membre.urlPhoto.url7}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 8 : </b> <img src="../../img/{{membre.urlPhoto.url8}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 9 : </b> <img src="../../img/{{membre.urlPhoto.url9}}" alt="" style="height: 200px;"><br><br>
+        <b>URL photo 10 : </b> <img src="../../img/{{membre.urlPhoto.url10}}" alt="" style="height: 200px;"><br><br>
+      </div>
+
+      <div>
+        <iframe src="https://player.vimeo.com/video/{{membre.urlVideo.url1}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{membre.urlVideo.url2}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{membre.urlVideo.url3}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+
+      <div>
+        <b>Soundcloud : </b>{{membre.urlSound}}
+      </div>
+
+    </div>
+  </div>
+</section>

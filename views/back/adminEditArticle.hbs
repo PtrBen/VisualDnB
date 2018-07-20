@@ -1,0 +1,73 @@
+<nav id="navigation" class="container-fluid navbar navbar-expand-lg navbar-dark sticky-top justify-content-center text-center">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-around">
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/visuel">Visuel</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/prog">Programmé avec</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link active" href="/admin/article">Article<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/showroom">Showroom</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/media">Media</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" href="/admin/membres">Membres</a>
+      </li>
+      <li class="nav-item btn-2">
+        <a class="nav-link" style="color: red" href="/admin/se-deconnecter">Se déconnecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="row">
+  <div class="col-12 col-md-6 text-center">
+    <form action="/admin/edit-article/{{article._id}}" method="POST">
+        <input type="text" name="url" placeholder="url" value="{{article.url}}"><br><br>
+        <input type="text" name="titre" placeholder="titre" value="{{article.titre}}"><br><br>
+        <input type="text" name="date" placeholder="date" value="{{article.date}}"><br><br>
+        <textarea name="description" id="description" class="ckeditor" cols="80" rows="10">{{article.description}}</textarea><br>
+        {{!-- <textarea type="text" name="description" placeholder="description">{{article.description}}</textarea><br><br> --}}
+        <input type="text" name="url1" placeholder="url1" value="{{article.photos.url1}}"><br><br>
+        <input type="text" name="url2" placeholder="url2" value="{{article.photos.url2}}"><br><br>
+        <input type="text" name="url3" placeholder="url3" value="{{article.photos.url3}}"><br><br>
+        <input type="text" name="url4" placeholder="url4" value="{{article.photos.url4}}"><br><br>
+        <input type="text" name="url5" placeholder="url5" value="{{article.photos.url5}}"><br><br>
+        <input type="text" name="url6" placeholder="url6" value="{{article.photos.url6}}"><br><br>
+        <input type="text" name="url7" placeholder="url7" value="{{article.photos.url7}}"><br><br>
+        <input type="text" name="url8" placeholder="url8" value="{{article.photos.url8}}"><br><br>
+        <input type="text" name="url9" placeholder="url9" value="{{article.photos.url9}}"><br><br>
+        <input type="text" name="url10" placeholder="url10" value="{{article.photos.url10}}"><br><br>
+        <input class="btn btn-success" type="submit" value="Envoyer">
+    </form>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="text-center">
+      <b>URL : </b> <img src="../../img/{{article.url}}" alt="" style="height: 200px;"><br><br>
+      <b>Titre : </b> <b>{{article.titre}}</b><br><br>
+      <b>Date : </b> <b>{{article.date}}</b><br><br>
+    </div>
+    <b>Description : </b> <b>{{{article.description}}}</b><br><br>
+    <div class="text-center">
+      <b>URL1 : </b> <img src="../../img/{{article.photos.url1}}" alt="" style="height: 200px;"><br><br>
+      <b>URL2 : </b> <img src="../../img/{{article.photos.url2}}" alt="" style="height: 200px;"><br><br>
+      <b>URL3 : </b> <img src="../../img/{{article.photos.url3}}" alt="" style="height: 200px;"><br><br>
+      <b>URL4 : </b> <img src="../../img/{{article.photos.url4}}" alt="" style="height: 200px;"><br><br>
+      <b>URL5 : </b> <img src="../../img/{{article.photos.url5}}" alt="" style="height: 200px;"><br><br>
+      <b>URL6 : </b> <img src="../../img/{{article.photos.url6}}" alt="" style="height: 200px;"><br><br>
+      <b>URL7 : </b> <img src="../../img/{{article.photos.url7}}" alt="" style="height: 200px;"><br><br>
+      <b>URL8 : </b> <img src="../../img/{{article.photos.url8}}" alt="" style="height: 200px;"><br><br>
+      <b>URL9 : </b> <img src="../../img/{{article.photos.url9}}" alt="" style="height: 200px;"><br><br>
+      <b>URL10 : </b> <img src="../../img/{{article.photos.url10}}" alt="" style="height: 200px;">
+    </div>
+  </div>
+</section>

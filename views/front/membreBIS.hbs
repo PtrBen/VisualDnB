@@ -1,0 +1,122 @@
+<section id="membre" class="container-fluid">
+  <div class="container-fluid filter">
+    <p class="w-100 text-center"> > > > <a class="back" href="javascript:history.back()">Retour vers la page principale</a> < < < </p>
+    <div>
+      <div class="row">
+        <div id="membreId" class="col-12">
+          <div class="row">
+            <div id="membrePic" class="col-12 text-center">
+              <img class="img-fluid" src="../img/{{membres.urlPicture}}"/>
+            </div>
+
+            <div id="membreDetails" class="col-4 offset-4 text-center">
+              <div id="membreNom">
+                <img class="img-fluid" src="../img/{{membres.urlNom}}"/>
+              </div>
+
+              <div id="membreSerial" class="col-10">
+                <img class="img-fluid" src="../img/{{membres.urlSerial}}"/>
+              </div>
+
+              {{!-- <div id="membreSkills">
+                <p></p>
+              </div> --}}
+
+              <div id="membreContact">
+                <a href="mailto:{{membres.contact}}">{{membres.contact}}</a>
+              </div>
+
+              <div id="membreSite">
+                <a target="_blank" href="{{membres.site}}">{{membres.site}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="membreDesc" class="col-12">
+          <div class="container text-center">
+            <hr>
+            <p id="description">
+              {{{membres.description}}}
+            </p>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="row">
+        <div id="pictures" class="col-12">
+          <div id="picContent" class="d-flex flew-wrap justify-content-around">
+            <div class="row">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url1}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url2}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url3}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url4}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url5}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url6}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url7}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url8}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url9}}" alt="" data-toggle="modal" data-target="#picModal">
+              <img class="img-fluid col-12 col-md-6" src="../img/{{membres.urlPhoto.url10}}" alt="" data-toggle="modal" data-target="#picModal">
+            </div>
+          </div>
+          <!-- >>>>>>>>>>>>> MODAL PICTURE <<<<<<<<<<<<<<<<< -->
+          <div id="picModal" class="modal fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="modal-body">
+                  <img id="modalFocus" src="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{!-- <div id="sounds" class="col-sm-12 order-sm-2 col-md-4 order-md-1">
+          <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/233661698&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div> --}}
+
+        <hr>
+
+        <div id="videos" class="col-12">
+          <div id="vidContent" class="d-flex flew-wrap justify-content-around">
+            <iframe src="https://player.vimeo.com/video/272434289" 
+            width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+            </iframe> 
+            <p>
+              <a href="https://vimeo.com/272434289">ghostCRASH</a> 
+              from <a href="https://vimeo.com/milkyeyes">Donato Sansone (milkyeyes)</a> 
+              on <a href="https://vimeo.com">Vimeo</a>.
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="w-100 text-center"> > > > <a class="back" href="javascript:history.back()">Retour vers la page principale</a> < < < </p>
+
+<hr>
+
+<footer class="box text-center container-fluid d-flex h-100">
+  <div class="container" style="padding-top: 3em; padding-bottom: 3em;">
+    <div class="w-100 row ">
+      <div class="col-6 w-100 d-flex justify-content-around align-items-center">
+        <a target="_blank" href="https://www.facebook.com/DNBVisual/"><i class="fab fa-facebook-square fa-5x"></i></a>
+        <a target="_blank" href="https://www.instagram.com/visualdnb/"><i class="fab fa-instagram fa-5x"></i></a>
+        <a target="_blank" href="https://vimeo.com/user85777322"><i class="fab fa-vimeo fa-5x"></i></a>
+      </div>
+      <div class="col-6 h-100 d-flex align-items-center">
+        <p class="toGreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</footer>
